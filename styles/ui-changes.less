@@ -1,0 +1,82 @@
+// To style other content in the text editor's shadow DOM, use the ::shadow expression
+atom-text-editor::shadow {
+  // change color of cursor
+  .cursor {
+    border-color: teal;
+  }
+
+
+  // highlighted pane styling
+  .is-focused .gutter {
+    background: #1C1C1C;
+
+    .line-number {
+      color: #666;
+    }
+  }
+
+  // default styling
+  .gutter {
+    background: #262626;
+
+    .line-number {
+      color: #343434;
+    }
+
+    .icon-right {
+      display: none;
+    }
+
+  }
+}
+
+// make active pane darker
+.active atom-text-editor {
+  background-color: #1c1c1c;
+}
+
+
+
+// tab bar
+.tab-bar {
+  background-color: @syntax-background-color;
+  box-shadow: 0 0 0 0;
+
+
+
+  .tab {
+    .title {
+      background-color: @syntax-background-color;
+    }
+
+    &.active, &.active .title {
+      background-color: #1c1c1c !important;
+    }
+
+    &:after {
+      border-bottom-color: transparent !important;
+    }
+
+  }
+
+
+}
+
+
+.tree-view {
+  // color file types
+  .name {
+    &[data-path*='.scss'], &[data-path*='.css'], &[data-path*='.less'], &[data-path*='.sass'] {
+      color: @syntax-color-added;
+    }
+
+    &[data-path*='.js'], &[data-path*='.json'] {
+      color: @syntax-color-renamed;
+    }
+
+    &[data-path*='.jsp'], &[data-path*='.html'], &[data-path*='.hbs'], &[data-path*='.htm'], &[data-path*='.tag'], &[data-path*='.tld'] {
+      color: @syntax-color-modified;
+    }
+
+  }
+}
