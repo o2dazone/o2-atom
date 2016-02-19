@@ -1,5 +1,5 @@
 # o2-atom theme
 
-A short description of your theme.
+A custom theme with focused/blurred pane support. Syntax highlighting mostly supports frontend languages.
 
-![A screenshot of your theme](https://f.cloud.github.com/assets/69169/2289498/4c3cb0ec-a009-11e3-8dbd-077ee11741e5.gif)
+![o2 Atom](https://github.com/o2dazone/o2-atom/blob/master/ss.png)
