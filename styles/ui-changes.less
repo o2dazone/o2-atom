@@ -1,5 +1,4 @@
-// To style other content in the text editor's shadow DOM, use the ::shadow expression
-atom-text-editor::shadow {
+atom-text-editor {
   // change color of cursor
   .cursor {
     border-color: teal;
@@ -44,12 +43,12 @@ atom-text-editor::shadow {
 
 
 
-  .tab {
-    .title {
+  .syntax--tab {
+    .syntax--title {
       background-color: @syntax-background-color;
     }
 
-    &.active, &.active .title {
+    &.active, &.active .syntax--title {
       background-color: #1c1c1c !important;
     }
 
@@ -65,7 +64,7 @@ atom-text-editor::shadow {
 
 .tree-view {
   // color file types
-  .name {
+  .syntax--name {
     &[data-path*='.scss'], &[data-path*='.css'], &[data-path*='.less'], &[data-path*='.sass'] {
       color: @syntax-color-added;
     }
