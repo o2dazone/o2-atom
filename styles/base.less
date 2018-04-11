@@ -1,137 +1,11 @@
 @import "syntax-variables";
 @import "ui-changes";
-
-atom-text-editor {
-  background-color: @syntax-background-color;
-  color: @syntax-text-color;
-}
-
-atom-text-editor .gutter {
-  background-color: @syntax-gutter-background-color;
-  color: @syntax-gutter-text-color;
-}
-
-atom-text-editor .gutter .line-number.cursor-line {
-  background-color: @syntax-gutter-background-color-selected;
-  color: @syntax-gutter-text-color-selected;
-}
-
-atom-text-editor .gutter .line-number.cursor-line-no-selection {
-  color: @syntax-gutter-text-color-selected;
-}
-
-atom-text-editor .wrap-guide {
-  color: @syntax-wrap-guide-color;
-}
-
-atom-text-editor .indent-guide {
-  color: @syntax-indent-guide-color;
-}
-
-atom-text-editor .invisible-character {
-  color: @syntax-invisible-character-color;
-}
-
-atom-text-editor .search-results .syntax--marker .region {
-  background-color: transparent;
-  border: @syntax-result-marker-color;
-}
-
-atom-text-editor .search-results .syntax--marker.current-result .region {
-  border: @syntax-result-marker-color-selected;
-}
-
-atom-text-editor.is-focused .cursor {
-  border-color: @syntax-cursor-color;
-}
-
-atom-text-editor.is-focused .selection .region {
-  background-color: @syntax-selection-color;
-}
-
-atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-editor.is-focused .line.cursor-line {
-  background-color: #202325;
-}
-
-.syntax--text {
-  color: #e8e0cf;
-}
-
-.syntax--comment {
-  &,
-  .syntax--block {
-    color: #484848;
-  }
-}
-
-.syntax--constant {
-  color: #96DAFF;
-}
-
-.syntax--keyword {
-  color: #c05d6d;
-}
-
-.syntax--variable {
-  color: #898989;
-}
-
-.syntax--invalid {
-  color: #ff0000;
-  background-color: rgba(255, 0, 0, 0.19);
-}
-
-.syntax--storage {
-  color: #9cb769;
-}
-
-.syntax--entity.syntax--name.syntax--function {
-  color: #A5A4B3;
-}
-
-.syntax--variable.syntax--parameter {
-  color: #D8DCE2;
-}
-
-.syntax--string {
-  color: #18aec4;
-}
-
-.syntax--string.syntax--regexp {
-  color: #D8E600;
-}
-
-.syntax--entity.syntax--name.syntax--type {
-  text-decoration: underline;
-}
-
-.syntax--entity.syntax--other.syntax--inherited-class {
-  text-decoration: underline;
-}
-
-.syntax--meta.syntax--tag {
-  &,
-  .syntax--entity {
-    color: #7A7A7A;
-  }
-}
-
-.syntax--entity.syntax--other.syntax--attribute-name {
-  color: #CFD7C1;
-}
+@import "atom-editor";
+@import "global";
 
 .syntax--meta.syntax--attribute-with-value.syntax--id.syntax--html,
 .syntax--string.syntax--quoted.syntax--double.syntax--html {
   color: #18aec4;
-}
-
-.syntax--support {
-  &.syntax--class {
-    color: #D4C2A7;
-  }
-  &.syntax--function {
-    color: #CBC3B1;
-  }
 }
 
 .syntax--markup {
@@ -166,34 +40,6 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
 	&.syntax--header {
 		color: #e8e0cf;
 		background-color: #343434;
-	}
-}
-
-.syntax--sublimelinter {
-	&.syntax--outline {
-		&.syntax--notes {
-			background-color: rgba(255, 255, 170, 0.31);
-		}
-		&.syntax--illegal {
-			background-color: rgba(255, 74, 82, 0.31);
-		}
-		&.syntax--warning {
-			background-color: rgba(223, 148, 0, 0.31);
-		}
-		&.syntax--violation {
-			background-color: rgba(255, 255, 255, 0.2);
-		}
-	}
-	&.syntax--underline {
-		&.syntax--illegal {
-			background-color: rgba(255, 0, 0, 0.31);
-		}
-		&.syntax--warning {
-			background-color: rgba(255, 0, 0, 0.31);
-		}
-		&.syntax--violation {
-			background-color: rgba(255, 0, 0, 0.31);
-		}
 	}
 }
 
@@ -242,11 +88,6 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
   color: #b6d877;
 }
 
-.syntax--meta.syntax--brace.syntax--round.syntax--coffee,
-.syntax--meta.syntax--brace.syntax--square.syntax--coffee {
-  color: #F6F080;
-}
-
 .syntax--punctuation.syntax--section.syntax--embedded.syntax--coffee {
   color: #b6d877;
 }
@@ -257,10 +98,6 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
 
 .syntax--meta.syntax--delimiter.syntax--method.syntax--period.syntax--coffee {
   color: #FFAA00;
-}
-
-.syntax--meta.syntax--brace.syntax--curly.syntax--coffee {
-  color: #b6d877;
 }
 
 .syntax--meta.syntax--tag.syntax--sgml.syntax--doctype.syntax--xml,
@@ -277,3 +114,8 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
 .syntax--brackethighlighter.syntax--default {
   color: #72AACA;
 }
+
+
+@import "scss";
+@import "linter";
+@import "json";
