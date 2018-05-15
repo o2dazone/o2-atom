@@ -1,3 +1,24 @@
 .linter-error {
-  background-color: pink;
+  animation: blinker 1s linear infinite;
+
+  //
+  // position: relative;
+  // &::after {
+  //   position: absolute;
+  //   top: -292px;
+  //   left: -120px;
+  //   background: url('https://media.giphy.com/media/EIZCMrLTkVJHa/giphy.gif') !important;
+  //   display: inline-block;
+  //   content: '';
+  //   background-repeat: no-repeat;
+  //   width: 290px;
+  //   height: 292px;
+  // }
 }
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+

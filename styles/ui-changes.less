@@ -1,37 +1,46 @@
+.atom-dock-toggle-button {
+  display: none;
+}
+
+.pane {
+  background-color: #262626;
+}
+
 atom-text-editor {
-  // change color of cursor
-  .cursor {
-    border-color: teal;
-  }
-
-
-  // highlighted pane styling
-  .is-focused .gutter {
-    background: #1C1C1C;
-
-    .line-number {
-      color: #666;
-    }
-  }
-
   // default styling
-  .gutter {
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+
+  &, .gutter {
+    transition: .2s background linear;
     background: #262626;
 
     .line-number {
-      color: #343434;
+      color: #262626;
     }
 
     .icon-right {
       display: none;
     }
-
   }
 }
 
-// make active pane darker
-.active atom-text-editor {
-  background-color: #1c1c1c;
+.active {
+  // make active pane darker
+  atom-text-editor, .tab-bar, .gutter, &.pane {
+    background-color: #1c1c1c;
+  }
+
+  .gutter {
+    .line-number {
+      color: #343434;
+
+      &.cursor-line-no-selection {
+        color: @syntax-gutter-text-color-selected;
+      }
+    }
+  }
 }
 
 
@@ -55,21 +64,25 @@ atom-text-editor {
   }
 }
 
-
 .tree-view {
   // color file types
-  .syntax--name {
-    &[data-path*='.scss'], &[data-path*='.css'], &[data-path*='.less'], &[data-path*='.sass'] {
+    * {
+      color: #c7beb3;
+    }
+
+    [data-name*='.scss'], [data-name*='.css'], [data-name*='.less'], [data-name*='.sass'] {
       color: @syntax-color-added;
     }
 
-    &[data-path*='.js'], &[data-path*='.json'] {
+    [data-name*='.js'], [data-name*='.json'] {
       color: @syntax-color-renamed;
     }
 
-    &[data-path*='.jsp'], &[data-path*='.html'], &[data-path*='.hbs'], &[data-path*='.htm'], &[data-path*='.tag'], &[data-path*='.tld'] {
+    [data-name*='.tmpl'], [data-name*='.jsp'], [data-name*='.html'], [data-name*='.hbs'], [data-name*='.htm'], [data-name*='.tag'], [data-path*='.tld'] {
       color: @syntax-color-modified;
     }
 
-  }
+    [data-name^='.'] {
+      color: #c05d6d;
+    }
 }
