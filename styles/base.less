@@ -1,10 +1,10 @@
 .syntax--text {
-  color: #e8e0cf;
+  color: @syntax-text-color;
 }
 
 .syntax--support {
   &.syntax--class {
-    color: #D4C2A7;
+    color: @yellow-orange;
   }
   &.syntax--function {
     color: #aea2bd;
@@ -14,43 +14,40 @@
 .syntax--comment {
   &,
   .syntax--block {
-    color: #484848;
+    color: @darkgrey;
   }
 }
 
 .syntax--constant {
-  color: #96DAFF;
+  color: @lightblue;
 }
 
 .syntax--keyword {
-  color: #c05d6d;
+  color: @red;
 }
 
 .syntax--variable {
-  color: #c7beb3;
+  color: @beige;
 }
 
 .syntax--invalid {
-  color: #ff0000;
+  color: @red;
   background-color: rgba(255, 0, 0, 0.19);
 }
 
 .syntax--storage {
-  color: #9cb769;
+  color: @green;
 }
 
 .syntax--entity.syntax--name.syntax--function {
-  color: #A5A4B3;
-}
-
-.syntax--variable.syntax--parameter {
-  color: #D8DCE2;
+  color: @lightgrey;
 }
 
 .syntax--string {
-  color: #18aec4;
+  color: @blue;
 }
 
+.syntax--variable.syntax--parameter,
 .syntax--string.syntax--regexp {
   color: #D8E600;
 }
@@ -59,17 +56,34 @@
   text-decoration: underline;
 }
 
-.syntax--entity.syntax--other.syntax--inherited-class {
-  text-decoration: underline;
-}
-
-.syntax--meta.syntax--tag {
+.syntax--tag {
   &,
   .syntax--entity {
-    color: #7a7a7a;
+    color: @grey;
+  }
+
+  &.syntax--definition {
+    &,
+    .syntax--begin,
+    .syntax--end {
+      color: @blue;
+    }
   }
 }
 
 .syntax--brace {
-  color: #666;
+  color: @grey;
+}
+
+.syntax--meta.syntax--diff {
+	color: @syntax-text-color;
+	background-color: @darkgrey;
+	&.syntax--header {
+		color: @syntax-text-color;
+		background-color: @darkgrey;
+	}
+}
+
+.syntax--brackethighlighter.syntax--default {
+  color: #72AACA;
 }

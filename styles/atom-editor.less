@@ -3,33 +3,119 @@ atom-text-editor {
   color: @syntax-text-color;
 
   &.is-focused .cursor {
-    border-color: @syntax-cursor-color;
+    border-color: #BBBCBD;
   }
 
   &.is-focused .selection .region {
-    background-color: @syntax-selection-color;
+    background-color: #3C3F42;
   }
 
-  &.is-focused .line-number.cursor-line-no-selection, &.is-focused .line.cursor-line {
-    background-color: #202325;
-  }
-
-  .wrap-guide {
-    color: @syntax-wrap-guide-color;
-  }
-
-  .indent-guide {
-    color: @syntax-indent-guide-color;
-  }
-
-  .search-results .syntax--marker .region {
-    background-color: transparent;
-    border: @syntax-result-marker-color;
-  }
-
-  search-results .syntax--marker.current-result .region {
-    border: @syntax-result-marker-color-selected;
+  &.is-focused .line-number.cursor-line-no-selection,
+  &.is-focused .line.cursor-line {
+    background-color: @syntax-gutter-background-color-selected;
   }
 }
 
 
+.atom-dock-toggle-button {
+  display: none;
+}
+
+.pane {
+  background-color: @syntax-background-color;
+}
+
+atom-text-editor {
+  // default styling
+  .invisible-character {
+    color: #51565A;
+  }
+
+  &,
+  .gutter {
+    transition: .2s background linear;
+    background: @syntax-background-color;
+
+    .line-number {
+      color: @syntax-background-color;
+    }
+
+    .icon-right {
+      display: none;
+    }
+  }
+}
+
+.active {
+  // make active pane darker
+  atom-text-editor,
+  .tab-bar,
+  .gutter,
+  &.pane {
+    background-color: @activebg;
+  }
+
+  .gutter {
+    .line-number {
+      color: @darkgrey;
+
+      &.cursor-line-no-selection {
+        color: @syntax-text-color;
+      }
+    }
+  }
+}
+
+
+// tab bar
+.tab-bar {
+  background-color: @syntax-background-color;
+  box-shadow: 0 0 0 0;
+
+  .syntax--tab {
+    .syntax--title {
+      background-color: @syntax-background-color;
+    }
+
+    &.active,
+    &.active .syntax--title {
+      background-color: @activebg !important;
+    }
+
+    &:after {
+      border-bottom-color: transparent !important;
+    }
+  }
+}
+
+.tree-view {
+    * {
+      color: @beige;
+    }
+
+    [data-name*='.scss'],
+    [data-name*='.css'],
+    [data-name*='.less'],
+    [data-name*='.sass'] {
+      color: #A8FF60;
+    }
+
+    [data-name*='.js'],
+    [data-name*='.json'] {
+      color: #96CBFE;
+    }
+
+    [data-name*='.tmpl'],
+    [data-name*='.jsp'],
+    [data-name*='.html'],
+    [data-name*='.hbs'],
+    [data-name*='.htm'],
+    [data-name*='.tag'],
+    [data-path*='.tld'] {
+      color: #E9C062;
+    }
+
+    [data-name^='.'] {
+      color: @red;
+    }
+}
