@@ -12,7 +12,7 @@ atom-text-editor {
 
   &.is-focused .line-number.cursor-line-no-selection,
   &.is-focused .line.cursor-line {
-    background-color: @syntax-gutter-background-color-selected;
+    background-color: @darkergrey;
   }
 }
 
@@ -97,12 +97,12 @@ atom-text-editor {
     [data-name*='.css'],
     [data-name*='.less'],
     [data-name*='.sass'] {
-      color: #A8FF60;
+      color: @brightgreen;
     }
 
     [data-name*='.js'],
     [data-name*='.json'] {
-      color: #96CBFE;
+      color: @lightblue;
     }
 
     [data-name*='.tmpl'],
@@ -112,7 +112,7 @@ atom-text-editor {
     [data-name*='.htm'],
     [data-name*='.tag'],
     [data-path*='.tld'] {
-      color: #E9C062;
+      color: @orange;
     }
 
     [data-name^='.'] {
