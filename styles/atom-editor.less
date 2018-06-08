@@ -14,18 +14,7 @@ atom-text-editor {
   &.is-focused .line.cursor-line {
     background-color: @darkergrey;
   }
-}
 
-
-.atom-dock-toggle-button {
-  display: none;
-}
-
-.pane {
-  background-color: @syntax-background-color;
-}
-
-atom-text-editor {
   // default styling
   .invisible-character {
     color: #51565A;
@@ -46,13 +35,41 @@ atom-text-editor {
   }
 }
 
+atom-pane {
+  border: 0 !important;
+}
+
+
+.atom-dock-toggle-button {
+  display: none;
+}
+
+// tab bar
+.tab-bar {
+  background-color: @syntax-background-color;
+  box-shadow: none;
+
+  * {
+    box-shadow: none !important;
+  }
+
+  span {
+    color: @grey;
+  }
+}
+
 .active {
   // make active pane darker
   atom-text-editor,
   .tab-bar,
-  .gutter,
-  &.pane {
+  .gutter {
     background-color: @activebg;
+  }
+
+  .tab-bar {
+    .active span {
+      color: @syntax-text-color !important;
+    }
   }
 
   .gutter {
@@ -62,28 +79,6 @@ atom-text-editor {
       &.cursor-line-no-selection {
         color: @syntax-text-color;
       }
-    }
-  }
-}
-
-
-// tab bar
-.tab-bar {
-  background-color: @syntax-background-color;
-  box-shadow: 0 0 0 0;
-
-  .syntax--tab {
-    .syntax--title {
-      background-color: @syntax-background-color;
-    }
-
-    &.active,
-    &.active .syntax--title {
-      background-color: @activebg !important;
-    }
-
-    &:after {
-      border-bottom-color: transparent !important;
     }
   }
 }
